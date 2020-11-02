@@ -38,7 +38,9 @@ namespace LiveAPI
                 options.AddPolicy(name: AllowLocalOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200");
+                    builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
 
